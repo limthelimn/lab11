@@ -1,23 +1,41 @@
 #include<iostream>
-
+#include<string>
 using namespace std;
 
-void mySwap(int &,int &); 
+template <typename swap>
+void mySwap(swap &,swap &);
 
 int main(){
-	int x,y;
-	cin >> x >> y;
+	int x, y;
+	string a, b;
+	char p, q;
+	
+	cin >> x >> y >> a >> b >> p >> q;
+	
 	cout << "Before swapping:\n";
 	cout << "x = " << x << ", y = " << y << "\n";
-	mySwap (x,y);
+	mySwap(x,y);
 	cout << "After swapping:\n";
 	cout << "x = " << x << ", y = " << y << "\n";
 	
+	cout << "Before swapping:\n";
+	cout << "a = " << a << ", b = " << b << "\n";
+	mySwap(a,b);
+	cout << "After swapping:\n";
+	cout << "a = " << a << ", b = " << b << "\n";
+	
+	cout << "Before swapping:\n";
+	cout << "p = " << p << ", q = " << q << "\n";
+	mySwap(p,q);
+	cout << "After swapping:\n";
+	cout << "p = " << p << ", q = " << q << "\n";
+
 	return 0;
 }
 
-void mySwap(int &x,int &y){
-	int i = 0;
+template <typename swap>
+void mySwap(swap &x,swap &y){
+	swap i;
 	i = x;
 	x = y;
 	y = i;
